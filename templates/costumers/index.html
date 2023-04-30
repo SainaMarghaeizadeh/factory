@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block header %}
+  <link rel="stylesheet" type="text/css" href="../static/assets/css/vendors/datatables.css">
+  <link rel="stylesheet" type="text/css" href="../static/assets/css/vendors/datatable-extension.css">
+{% endblock %}
+{% block content %}
+      <div class="page-body">
+        <div class="container-fluid">
+          <div class="page-title">
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <h3>لیست خریداران</h3>
+              </div>
+              <div class="col-12 col-sm-6">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/"> <i data-feather="home"></i></a></li>
+                  <li class="breadcrumb-item active">خریداران</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Container-fluid starts-->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-header pb-0">
+                  <a href="/costumers/create" class="btn btn-primary">اضافه کردن خریدار</a>
+                </div>
+                <div class="card-body">
+                  <div class="dt-ext table-responsive">
+                    <table class="display" id="responsive">
+                      <thead>
+                        <tr>
+                          <th>نام خریدار</th>
+                          <th>نام خانوادگی خریدار</th>
+                          <th>تاریخ تولد</th>
+                          <th>عملیات</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for costumer in costumers %}
+                        <tr>
+                          <td>{{costumer[1]}}</td>
+                          <td>{{costumer[2]}}</td>
+                          <td>{{costumer[3]}}</td>
+                          <td>
+                            <a href="/costumers/remove/{{costumer[0]}}" class="btn btn-danger">حذف</a>
+                            <a href="/costumers/edit/{{costumer[0]}}" class="btn btn-warning">ویرایش</a>
+                          </td>
+                        </tr>
+                      {% endfor %}
+
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>نام خریدار</th>
+                          <th>نام خانوادگی خریدار</th>
+                          <th>تاریخ تولد</th>
+                          <th>عملیات</th>
+
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Container-fluid Ends-->
+      </div>
+{% endblock %}
+
+{% block footer %}
+  <script src="../static/assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/dataTables.buttons.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/jszip.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/buttons.colVis.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/pdfmake.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/vfs_fonts.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/dataTables.autoFill.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/dataTables.select.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/buttons.bootstrap4.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/buttons.html5.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/buttons.print.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/dataTables.bootstrap4.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/dataTables.responsive.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/responsive.bootstrap4.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/dataTables.keyTable.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/dataTables.colReorder.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/dataTables.fixedHeader.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/dataTables.rowReorder.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/dataTables.scroller.min.js"></script>
+  <script src="../static/assets/js/datatable/datatable-extension/custom.js"></script>
+{% endblock %}
+

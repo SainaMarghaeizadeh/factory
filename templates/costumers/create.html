@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <link rel="stylesheet" type="text/css" href="../static/assets/js/persiandatepicker/persian-datepicker-0.4.5.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="page-body">
+        <div class="container-fluid">
+          <div class="page-title">
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <h3>اضافه کردن خریدار جدید</h3>
+              </div>
+              <div class="col-12 col-sm-6">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/"> <i data-feather="home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="/cosumers">خریداران</a></li>
+                  <li class="breadcrumb-item active">اضافه کردن خریدار</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Container-fluid starts-->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <form class="form-horizontal" action="#" method="post">
+                    <fieldset>
+                    <!-- Text input-->
+                    <div class="mb-3 row">
+                      <label class="col-lg-12 form-label text-lg-start" for="textinput">نام خریدار</label>
+                      <div class="col-lg-12">
+                      <input name="costumer_name" type="text" placeholder="نام خریدار" class="form-control btn-square input-md">
+                      </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="mb-3 row">
+                      <label class="col-lg-12 form-label text-lg-start" for="textinput">نام خانوادگی خریدار</label>
+                      <div class="col-lg-12">
+                      <input  name="costumer_family" type="text" placeholder="نام خانوادگی خریدار" class="form-control btn-square input-md">
+                      </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="mb-3 row">
+                      <label class="col-lg-12 form-label text-lg-start" for="textinput">تاریخ تولد</label>
+                      <div class="col-lg-12">
+                        <input class="datepicker9 form-control digits" type="text" name="costumer_birth_date" placeholder="تاریخ تولد">
+                      </div>
+                    </div>
+
+
+
+                    <!-- Button -->
+                    <div class="mb-3 row">
+                      <div class="col-lg-12">
+                        <button id="singlebutton" name="singlebutton" class="btn btn-primary mt-5">اضافه کردن</button>
+                      </div>
+                    </div>
+
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Container-fluid Ends-->
+      </div>
+{% endblock %}
+
+
+{% block footer %}
+  <script src="../static/assets/js/persiandatepicker/persian-date-0.1.8.min.js"></script>
+  <script src="../static/assets/js/persiandatepicker/persian-datepicker-0.4.5.min.js"></script>
+  <script>
+        $('.datepicker9').persianDatepicker({
+          format: 'YYYY/MM/DD',
+          autoClose: true
+      });
+  </script>
+{% endblock %}
